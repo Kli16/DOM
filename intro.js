@@ -6,10 +6,10 @@ var button = document.getElementById('b');
 var addelement = function(e){
      var li = document.createElement('li');
      li.innerHTML = 'newitem';
-     list.appendChild(li);
-     li.addEventListener('click', removeelement);
+     li.addEventListener('click', removeElement);
      li.addEventListener('mouseover', changeheading);
      li.addEventListener('mouseout', changeheadingback);
+     list.appendChild(li);
 }
 
 button.addEventListener('click', addelement);
@@ -27,14 +27,14 @@ var changeheadingback = function(e){
 }
 
 //remove listelements
-var listelements = document.getElementsByTagName('li');
-
-var removeelement = function(e){
+var removeElement = function(e){
      this.remove();
 }
 
-for (li of listelements){
-  li.addEventListener('click', removeelement);
-  li.addEventListener('mouseover', changeheading);
-  li.addEventListener('mouseout', changeheadingback);
+//Add all event listeners to pre-existing LI elements
+var listelements = document.getElementsByTagName('li');
+for (var i = 0; i < listelements.length; i++) {
+  listelements[i].addEventListener('click', removeElement);
+  listelements[i].addEventListener('mouseover', changeheading);
+  listelements[i].addEventListener('mouseout', changeheadingback);
 }
