@@ -95,3 +95,16 @@ var lazyAdd = function(e) {
 
 var lazyButton = document.getElementById("b4");
 lazyButton.addEventListener("click", lazyAdd);
+
+/* Part FIVE: Closer and closer to 1 */
+var fractionList = document.getElementById('fraction-list');
+var makeFraction = function(n) {
+    return (n - 1) / (n + 1);
+}
+var addFraction = function(evt) {
+    var li = document.createElement('li');
+    li.innerHTML = makeFraction(fractionList.childNodes.length);
+    fractionList.appendChild(li);
+}
+var fractionButton = document.getElementById("b5");
+fractionButton.addEventListener("click", addFraction);
