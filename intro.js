@@ -38,3 +38,23 @@ for (var i = 0; i < listelements.length; i++) {
   listelements[i].addEventListener('mouseover', changeheading);
   listelements[i].addEventListener('mouseout', changeheadingback);
 }
+
+
+/* Part TWO */
+
+var fibList = document.getElementById("fibonacci");
+
+var fibonacci = function(n) {
+    if(n == 0) return 0;
+    else if(n == 1) return 1;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+var fibAdd = function(e) {
+     var li = document.createElement('li');
+    li.innerHTML = fibonacci(this.childNodes.length);
+     fibList.appendChild(li);
+}
+
+var fibButton = document.getElementById("b2");
+fibButton.addEventListener("click", fibAdd);
