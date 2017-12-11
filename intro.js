@@ -52,9 +52,46 @@ var fibonacci = function(n) {
 
 var fibAdd = function(e) {
      var li = document.createElement('li');
-    li.innerHTML = fibonacci(this.childNodes.length);
+     console.log(this.childNodes.length);
+     li.innerHTML = fibonacci(fibList.childNodes.length);
      fibList.appendChild(li);
 }
 
 var fibButton = document.getElementById("b2");
 fibButton.addEventListener("click", fibAdd);
+
+/* Part THREE */
+
+var triList = document.getElementById("triangle");
+
+var triangle = function(n) {
+    return (n * (n + 1)) / 2;
+}
+
+var triAdd = function(e) {
+     var li = document.createElement('li');
+     console.log(triList.childNodes.length);
+     li.innerHTML = triangle(triList.childNodes.length);
+     triList.appendChild(li);
+}
+
+var triButton = document.getElementById("b3");
+triButton.addEventListener("click", triAdd);
+
+/* Part FOUR */
+
+var lazyList = document.getElementById("lazy caterer");
+
+var lazy = function(n) {
+    return ((n * n) + n + 2) / 2;
+}
+
+var lazyAdd = function(e) {
+     var li = document.createElement('li');
+     console.log(lazyList.childNodes.length);
+     li.innerHTML = lazy(lazyList.childNodes.length);
+     lazyList.appendChild(li);
+}
+
+var lazyButton = document.getElementById("b4");
+lazyButton.addEventListener("click", lazyAdd);
